@@ -4,6 +4,9 @@ import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 /** 
@@ -22,8 +25,10 @@ public class NewRegisterEntity {
 	private static final String CONFIRM_PASSWORD = "confirm_Password";
 	private static final String MOBILE_NUMBER = "mobile_Number";
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = ID)
-	private String id;
+	private Long id;
 
 	@Column(name = EMAIL)
 	private String email;
@@ -40,11 +45,11 @@ public class NewRegisterEntity {
 	@Column(name = MOBILE_NUMBER)
 	private String mobileNumber;
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
