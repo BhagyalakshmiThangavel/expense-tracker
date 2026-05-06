@@ -43,6 +43,11 @@ public class UserService {
 		}
 		return jwtUtil.generateToken(user.getEmail());
 	}
+
+	public Object getUserProfile() {
+		// TODO Auto-generated method stub
+		return "Succefully Authorized";
+	}
 	
 	
 
